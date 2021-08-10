@@ -3,27 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D3F5746826C26AC100525B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5746726C26AC100525B74 /* AppDelegate.swift */; };
 		D3F5746A26C26AC100525B74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5746926C26AC100525B74 /* SceneDelegate.swift */; };
-		D3F5746C26C26AC100525B74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5746B26C26AC100525B74 /* ViewController.swift */; };
+		D3F5746C26C26AC100525B74 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5746B26C26AC100525B74 /* MainViewController.swift */; };
 		D3F5746F26C26AC200525B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F5746D26C26AC200525B74 /* Main.storyboard */; };
 		D3F5747126C26AC300525B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F5747026C26AC300525B74 /* Assets.xcassets */; };
 		D3F5747426C26AC300525B74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F5747226C26AC300525B74 /* LaunchScreen.storyboard */; };
+		D3F5747D26C26FCC00525B74 /* MultiSelectSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = D3F5747C26C26FCC00525B74 /* MultiSelectSegmentedControl */; };
+		D3F5748526C2711100525B74 /* MainClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5748426C2711100525B74 /* MainClasses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D3F5746426C26AC100525B74 /* NYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F5746726C26AC100525B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3F5746926C26AC100525B74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3F5746B26C26AC100525B74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3F5746B26C26AC100525B74 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D3F5746E26C26AC200525B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3F5747026C26AC300525B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3F5747326C26AC300525B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3F5747526C26AC300525B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3F5748426C2711100525B74 /* MainClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainClasses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F5747D26C26FCC00525B74 /* MultiSelectSegmentedControl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +60,56 @@
 		D3F5746626C26AC100525B74 /* NYT */ = {
 			isa = PBXGroup;
 			children = (
+				D3F5748126C270DD00525B74 /* base */,
+				D3F5747E26C270BF00525B74 /* view */,
+			);
+			path = NYT;
+			sourceTree = "<group>";
+		};
+		D3F5747E26C270BF00525B74 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D3F5748026C270D100525B74 /* storyboard */,
+				D3F5747F26C270CC00525B74 /* controller */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D3F5747F26C270CC00525B74 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3F5748226C270F100525B74 /* main */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		D3F5748026C270D100525B74 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D3F5746D26C26AC200525B74 /* Main.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		D3F5748126C270DD00525B74 /* base */ = {
+			isa = PBXGroup;
+			children = (
 				D3F5746726C26AC100525B74 /* AppDelegate.swift */,
 				D3F5746926C26AC100525B74 /* SceneDelegate.swift */,
-				D3F5746B26C26AC100525B74 /* ViewController.swift */,
-				D3F5746D26C26AC200525B74 /* Main.storyboard */,
 				D3F5747026C26AC300525B74 /* Assets.xcassets */,
 				D3F5747226C26AC300525B74 /* LaunchScreen.storyboard */,
 				D3F5747526C26AC300525B74 /* Info.plist */,
 			);
-			path = NYT;
+			path = base;
+			sourceTree = "<group>";
+		};
+		D3F5748226C270F100525B74 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				D3F5746B26C26AC100525B74 /* MainViewController.swift */,
+				D3F5748426C2711100525B74 /* MainClasses.swift */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +128,9 @@
 			dependencies = (
 			);
 			name = NYT;
+			packageProductDependencies = (
+				D3F5747C26C26FCC00525B74 /* MultiSelectSegmentedControl */,
+			);
 			productName = NYT;
 			productReference = D3F5746426C26AC100525B74 /* NYT.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +158,9 @@
 				Base,
 			);
 			mainGroup = D3F5745B26C26AC100525B74;
+			packageReferences = (
+				D3F5747B26C26FCC00525B74 /* XCRemoteSwiftPackageReference "MultiSelectSegmentedControl" */,
+			);
 			productRefGroup = D3F5746526C26AC100525B74 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +188,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3F5746C26C26AC100525B74 /* ViewController.swift in Sources */,
+				D3F5748526C2711100525B74 /* MainClasses.swift in Sources */,
+				D3F5746C26C26AC100525B74 /* MainViewController.swift in Sources */,
 				D3F5746826C26AC100525B74 /* AppDelegate.swift in Sources */,
 				D3F5746A26C26AC100525B74 /* SceneDelegate.swift in Sources */,
 			);
@@ -287,7 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NYT/Info.plist;
+				INFOPLIST_FILE = NYT/base/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NYT/Info.plist;
+				INFOPLIST_FILE = NYT/base/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +391,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3F5747B26C26FCC00525B74 /* XCRemoteSwiftPackageReference "MultiSelectSegmentedControl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yonat/MultiSelectSegmentedControl.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3F5747C26C26FCC00525B74 /* MultiSelectSegmentedControl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3F5747B26C26FCC00525B74 /* XCRemoteSwiftPackageReference "MultiSelectSegmentedControl" */;
+			productName = MultiSelectSegmentedControl;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D3F5745C26C26AC100525B74 /* Project object */;
 }
