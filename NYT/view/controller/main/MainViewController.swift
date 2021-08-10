@@ -7,9 +7,10 @@
 
 import UIKit
 import MultiSelectSegmentedControl
+import JGProgressHUD
 
 class MainViewController: UIViewController {
-
+    
     @IBOutlet weak var segmentArticleType: UISegmentedControl!
     @IBOutlet weak var segmentDaysPeriod: UISegmentedControl!
     @IBOutlet weak var segmentSocialType: MultiSelectSegmentedControl!
@@ -20,6 +21,8 @@ class MainViewController: UIViewController {
     private var socialNetworks: [String] = []
     
     private var posibleNetworks: [String] = ["facebook", "twitter"]
+    
+    let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +67,34 @@ extension MainViewController {
     }
     
     @IBAction func actionSearch(_ sender: Any) {
-        NYTApi.getArticles(type: articleType, days: daysPeriod, socials: socialNetworks) { result in
+        hud.show(in: view)
+        NYTApi.getArticles(type: articleType, days: daysPeriod, socials: socialNetworks) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(articles):
-                print("\(articles)")
-            case let .failure(error):
-                print("\(error)")
+                DispatchQueue.main.async {
+                    self.hud.dismiss()
+                    if articles.count == 0 {
+                        self.showEmpty()
+                    } else {
+                        guard let resultsView = self.storyboard?.instantiateViewController(withIdentifier: ListArticlesViewController.identifier) as? ListArticlesViewController else { return }
+                        resultsView.setupArticles(articles)
+                        self.navigationController?.pushViewController(resultsView, animated: true)
+                    }
+                }
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.hud.dismiss()
+                }
             }
         }
+    }
+    
+    private func showEmpty() {
+        let alert = UIAlertController(title: "Info", message: "Empty response received, try again.", preferredStyle: .alert)
+        let accept = UIAlertAction(title: "Accept", style: .default)
+        alert.addAction(accept)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

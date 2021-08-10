@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Zg-ex-hFk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -249,6 +250,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1330.4347826086957" y="284.59821428571428"/>
+        </scene>
+        <!--List Articles View Controller-->
+        <scene sceneID="Kcd-Cu-J7G">
+            <objects>
+                <viewController storyboardIdentifier="ArticlesDetails" id="UVf-R2-QyJ" customClass="ListArticlesViewController" customModule="NYT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Szq-L5-1gy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ym7-OB-8N2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bJg-U4-tnV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="UVf-R2-QyJ" id="QQo-bU-lLI"/>
+                                            <outlet property="delegate" destination="UVf-R2-QyJ" id="zpN-wy-hDZ"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w9t-aG-lzp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="w9t-aG-lzp" firstAttribute="bottom" secondItem="Ym7-OB-8N2" secondAttribute="bottom" id="ACH-b7-xyv"/>
+                            <constraint firstItem="Ym7-OB-8N2" firstAttribute="leading" secondItem="w9t-aG-lzp" secondAttribute="leading" id="CGz-pG-aYX"/>
+                            <constraint firstItem="Ym7-OB-8N2" firstAttribute="top" secondItem="w9t-aG-lzp" secondAttribute="top" id="Mpf-dk-oxi"/>
+                            <constraint firstItem="w9t-aG-lzp" firstAttribute="trailing" secondItem="Ym7-OB-8N2" secondAttribute="trailing" id="XQ9-Aa-AEO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bJg-U4-tnV" id="q9O-XK-Trq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJY-Wy-0oa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="285"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="BjT-vx-bEG">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="b3c-qK-Czz" customClass="DetailsViewController" customModule="NYT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NzU-7o-3eu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rrg-iO-2b5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTy-9N-EPF">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0D2-bz-SkS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0D2-bz-SkS" firstAttribute="bottom" secondItem="Rrg-iO-2b5" secondAttribute="bottom" id="9D3-dx-QvD"/>
+                            <constraint firstItem="0D2-bz-SkS" firstAttribute="trailing" secondItem="Rrg-iO-2b5" secondAttribute="trailing" id="RIX-OF-yxW"/>
+                            <constraint firstItem="Rrg-iO-2b5" firstAttribute="top" secondItem="0D2-bz-SkS" secondAttribute="top" id="SUU-03-qWG"/>
+                            <constraint firstItem="Rrg-iO-2b5" firstAttribute="leading" secondItem="0D2-bz-SkS" secondAttribute="leading" id="vnq-MU-qZb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="OTy-9N-EPF" id="Qgi-ZD-3Ck"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vT4-Gw-lFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2969" y="287"/>
         </scene>
     </scenes>
     <resources>

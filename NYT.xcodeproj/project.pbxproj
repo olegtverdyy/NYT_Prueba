@@ -20,6 +20,12 @@
 		D3F5749D26C27EEF00525B74 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5749326C27EEF00525B74 /* Media.swift */; };
 		D3F574A126C280A700525B74 /* NYTApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F574A026C280A700525B74 /* NYTApi.swift */; };
 		D3F574A526C280B800525B74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F574A426C280B800525B74 /* Constants.swift */; };
+		D3F574A826C2870A00525B74 /* ListArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F574A726C2870A00525B74 /* ListArticlesViewController.swift */; };
+		D3F574AC26C2875900525B74 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F574AA26C2875900525B74 /* ArticleTableViewCell.swift */; };
+		D3F574AD26C2875900525B74 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3F574AB26C2875900525B74 /* ArticleTableViewCell.xib */; };
+		D3F574B126C2946100525B74 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D3F574B026C2946100525B74 /* Kingfisher */; };
+		D3F574B426C297E600525B74 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F574B326C297E600525B74 /* DetailsViewController.swift */; };
+		D3F574B726C29A0500525B74 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D3F574B626C29A0500525B74 /* JGProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,10 @@
 		D3F5749326C27EEF00525B74 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		D3F574A026C280A700525B74 /* NYTApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTApi.swift; sourceTree = "<group>"; };
 		D3F574A426C280B800525B74 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D3F574A726C2870A00525B74 /* ListArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListArticlesViewController.swift; sourceTree = "<group>"; };
+		D3F574AA26C2875900525B74 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		D3F574AB26C2875900525B74 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		D3F574B326C297E600525B74 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F574B126C2946100525B74 /* Kingfisher in Frameworks */,
+				D3F574B726C29A0500525B74 /* JGProgressHUD in Frameworks */,
 				D3F5748826C2764500525B74 /* MultiSelectSegmentedControl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +102,8 @@
 		D3F5747F26C270CC00525B74 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				D3F574B226C2976C00525B74 /* details */,
+				D3F574A626C286F600525B74 /* list */,
 				D3F5748226C270F100525B74 /* main */,
 			);
 			path = controller;
@@ -151,6 +165,32 @@
 			path = constants;
 			sourceTree = "<group>";
 		};
+		D3F574A626C286F600525B74 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				D3F574A926C2874700525B74 /* rows */,
+				D3F574A726C2870A00525B74 /* ListArticlesViewController.swift */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		D3F574A926C2874700525B74 /* rows */ = {
+			isa = PBXGroup;
+			children = (
+				D3F574AA26C2875900525B74 /* ArticleTableViewCell.swift */,
+				D3F574AB26C2875900525B74 /* ArticleTableViewCell.xib */,
+			);
+			path = rows;
+			sourceTree = "<group>";
+		};
+		D3F574B226C2976C00525B74 /* details */ = {
+			isa = PBXGroup;
+			children = (
+				D3F574B326C297E600525B74 /* DetailsViewController.swift */,
+			);
+			path = details;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,6 +209,8 @@
 			name = NYT;
 			packageProductDependencies = (
 				D3F5748726C2764500525B74 /* MultiSelectSegmentedControl */,
+				D3F574B026C2946100525B74 /* Kingfisher */,
+				D3F574B626C29A0500525B74 /* JGProgressHUD */,
 			);
 			productName = NYT;
 			productReference = D3F5746426C26AC100525B74 /* NYT.app */;
@@ -199,6 +241,8 @@
 			mainGroup = D3F5745B26C26AC100525B74;
 			packageReferences = (
 				D3F5748626C2764500525B74 /* XCRemoteSwiftPackageReference "MultiSelectSegmentedControl" */,
+				D3F574AF26C2946100525B74 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D3F574B526C29A0500525B74 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = D3F5746526C26AC100525B74 /* Products */;
 			projectDirPath = "";
@@ -214,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F574AD26C2875900525B74 /* ArticleTableViewCell.xib in Resources */,
 				D3F5747426C26AC300525B74 /* LaunchScreen.storyboard in Resources */,
 				D3F5747126C26AC300525B74 /* Assets.xcassets in Resources */,
 				D3F5746F26C26AC200525B74 /* Main.storyboard in Resources */,
@@ -229,13 +274,16 @@
 			files = (
 				D3F5748526C2711100525B74 /* MainClasses.swift in Sources */,
 				D3F5749D26C27EEF00525B74 /* Media.swift in Sources */,
+				D3F574A826C2870A00525B74 /* ListArticlesViewController.swift in Sources */,
 				D3F5749826C27EEF00525B74 /* MediaMetadata.swift in Sources */,
 				D3F5749A26C27EEF00525B74 /* NYTResponse.swift in Sources */,
+				D3F574AC26C2875900525B74 /* ArticleTableViewCell.swift in Sources */,
 				D3F574A126C280A700525B74 /* NYTApi.swift in Sources */,
 				D3F5749626C27EEF00525B74 /* Article.swift in Sources */,
 				D3F5746C26C26AC100525B74 /* MainViewController.swift in Sources */,
 				D3F5746826C26AC100525B74 /* AppDelegate.swift in Sources */,
 				D3F574A526C280B800525B74 /* Constants.swift in Sources */,
+				D3F574B426C297E600525B74 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +495,22 @@
 				version = 2.2.0;
 			};
 		};
+		D3F574AF26C2946100525B74 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+		D3F574B526C29A0500525B74 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -454,6 +518,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D3F5748626C2764500525B74 /* XCRemoteSwiftPackageReference "MultiSelectSegmentedControl" */;
 			productName = MultiSelectSegmentedControl;
+		};
+		D3F574B026C2946100525B74 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3F574AF26C2946100525B74 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		D3F574B626C29A0500525B74 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3F574B526C29A0500525B74 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

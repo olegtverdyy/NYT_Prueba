@@ -9,7 +9,7 @@ import Foundation
 struct Article: Codable {
     let uri: String?
     let url: String?
-    let source: String?
+    let author: String?
     let id: Int?
     let publishedDate, section: String?
     let title: String?
@@ -17,7 +17,7 @@ struct Article: Codable {
 
     enum CodingKeys: String, CodingKey {
         case uri, url, id
-        case source
+        case author = "byline"
         case publishedDate = "published_date"
         case section
         case title
