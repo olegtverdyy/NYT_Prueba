@@ -64,7 +64,14 @@ extension MainViewController {
     }
     
     @IBAction func actionSearch(_ sender: Any) {
-        print("\(articleType.stringValue()) - \(daysPeriod.stringValue()) - \(socialNetworks)")
+        NYTApi.getArticles(type: articleType, days: daysPeriod, socials: socialNetworks) { result in
+            switch result {
+            case let .success(articles):
+                print("\(articles)")
+            case let .failure(error):
+                print("\(error)")
+            }
+        }
     }
 }
 

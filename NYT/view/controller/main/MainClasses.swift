@@ -14,7 +14,7 @@ public enum ArticleType: Int {
     
     func stringValue() -> String {
         switch self {
-        case .mostEmailed: return "mostmailed"
+        case .mostEmailed: return "mostemailed"
         case .mostShared: return "mostshared"
         case .mostViewed: return "mostviewed"
         }
