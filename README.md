@@ -23,5 +23,5 @@ Para realizar las llamadas de la API se ha realizado una clase que usa URLSessio
 
 ![CleanShot 2021-08-11 at 09 38 52](https://user-images.githubusercontent.com/76475720/128989308-03d613ce-664a-412a-9e47-04b37608937a.png)
 
-![CleanShot 2021-08-11 at 09 38 52](https://user-images.githubusercontent.com/76475720/128989350-05e30ef2-1832-4264-8fa4-d329c235ff3c.png)
+![CleanShot 2021-08-11 at 09 42 04](https://user-images.githubusercontent.com/76475720/128989699-73b25eb2-06a4-4371-b9a9-87da14eb299d.png)
 
