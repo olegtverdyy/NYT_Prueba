@@ -18,23 +18,21 @@ class MainViewController: UIViewController {
     
     private var articleType: ArticleType = .mostEmailed
     private var daysPeriod: DaysPeriod = .one
-    private var socialNetworks: [String] = []
-    
-    private var posibleNetworks: [String] = ["facebook", "twitter"]
+    private var socialNetworks: [SocialNetworks] = [SocialNetworks]()
     
     let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Article search"
+        title = LS.string(.title_article_search)
         
         setup()
         checkMostShared()
     }
     
     func setup() {
-        segmentSocialType.items = ["Facebook", "Twitter"]
+        segmentSocialType.items = SocialNetworks.allCases.map { $0.rawValue.capitalized }
         segmentSocialType.delegate = self
     }
     
@@ -91,8 +89,8 @@ extension MainViewController {
     }
     
     private func showEmpty() {
-        let alert = UIAlertController(title: "Info", message: "Empty response received, try again.", preferredStyle: .alert)
-        let accept = UIAlertAction(title: "Accept", style: .default)
+        let alert = UIAlertController(title: LS.string(.title_info), message: LS.string(.description_empty), preferredStyle: .alert)
+        let accept = UIAlertAction(title: LS.string(.accept_button), style: .default)
         alert.addAction(accept)
         self.present(alert, animated: true, completion: nil)
     }
@@ -103,10 +101,10 @@ extension MainViewController {
 extension MainViewController: MultiSelectSegmentedControlDelegate {
     func multiSelect(_ multiSelectSegmentedControl: MultiSelectSegmentedControl, didChange value: Bool, at index: Int) {
         if value {
-            socialNetworks.append(posibleNetworks[index])
+            socialNetworks.append(SocialNetworks.allCases[index])
         } else {
-            if socialNetworks.contains(posibleNetworks[index]) {
-                socialNetworks.removeAll { $0 == posibleNetworks[index] }
+            if socialNetworks.contains(SocialNetworks.allCases[index]) {
+                socialNetworks.removeAll { $0 == SocialNetworks.allCases[index] }
             }
         }
     }

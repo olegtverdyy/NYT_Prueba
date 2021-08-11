@@ -24,10 +24,11 @@ class ListArticlesViewController: UIViewController {
     }
     
     func setupStyle() {
-        title = "Results"
+        title = LS.string(.title_results)
         
         tableView.backgroundView = UIView()
         tableView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.00)
+        tableView.estimatedRowHeight = 200
     }
     
     func registerCells() {
@@ -59,9 +60,7 @@ extension ListArticlesViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier) as? ArticleTableViewCell else { return UITableViewCell() }
-        
-        cell.selectionStyle = .none
-        
+                
         cell.loadArticle(articles[indexPath.row])
         
         return cell

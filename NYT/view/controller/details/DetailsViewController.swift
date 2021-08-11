@@ -46,8 +46,8 @@ extension DetailsViewController: WKNavigationDelegate {
     }
     
     private func showLoadingError() {
-        let alert = UIAlertController(title: "Error", message: "An error ocurred while loading.", preferredStyle: .alert)
-        let accept = UIAlertAction(title: "Accept", style: .default) { [weak self] _ in
+        let alert = UIAlertController(title: LS.string(.title_error), message: LS.string(.description_error_loading), preferredStyle: .alert)
+        let accept = UIAlertAction(title: LS.string(.accept_button), style: .default) { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         }
         alert.addAction(accept)

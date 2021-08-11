@@ -18,7 +18,7 @@ class ArticleTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
-    static let height: CGFloat = 140
+    static let height: CGFloat = UITableView.automaticDimension
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imgArticle: UIImageView!
@@ -45,6 +45,8 @@ class ArticleTableViewCell: UITableViewCell {
         
         imgArticle.layer.cornerRadius = 18
         imgArticle.clipsToBounds = true
+                
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -65,6 +67,7 @@ class ArticleTableViewCell: UITableViewCell {
         lbAuthor.text = article.author ?? ""
         lbDate.text = article.publishedDate ?? ""
         lbSection.text = article.section ?? ""
+        
     }
     
 }

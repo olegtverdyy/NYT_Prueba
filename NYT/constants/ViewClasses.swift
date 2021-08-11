@@ -1,5 +1,5 @@
 //
-//  MainClasses.swift
+//  Utils.swift
 //  NYT
 //
 //  Created by Oleg Tverdyy on 10/8/21.
@@ -35,3 +35,7 @@ public enum DaysPeriod: Int {
     }
 }
 
+public enum SocialNetworks: String, CaseIterable {
+    case facebook = "facebook"
+    case twitter = "twitter"
+}

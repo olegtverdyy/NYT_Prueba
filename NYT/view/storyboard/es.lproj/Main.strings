@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Social type"; ObjectID = "4bo-Et-Ev7"; */
+"4bo-Et-Ev7.text" = "Tipo red social";
+
+/* Class = "UILabel"; text = "Article type"; ObjectID = "Dee-yp-BLV"; */
+"Dee-yp-BLV.text" = "Tipo articulo";
+
+/* Class = "UISegmentedControl"; HAM-c4-h0h.segmentTitles[0] = "Most emailed"; ObjectID = "HAM-c4-h0h"; */
+"HAM-c4-h0h.segmentTitles[0]" = "Más enviado";
+
+/* Class = "UISegmentedControl"; HAM-c4-h0h.segmentTitles[1] = "Most shared"; ObjectID = "HAM-c4-h0h"; */
+"HAM-c4-h0h.segmentTitles[1]" = "Más compartido";
+
+/* Class = "UISegmentedControl"; HAM-c4-h0h.segmentTitles[2] = "Most viewed"; ObjectID = "HAM-c4-h0h"; */
+"HAM-c4-h0h.segmentTitles[2]" = "Más visto";
+
+/* Class = "UISegmentedControl"; Pug-ki-gwi.segmentTitles[0] = "1 day"; ObjectID = "Pug-ki-gwi"; */
+"Pug-ki-gwi.segmentTitles[0]" = "1 día";
+
+/* Class = "UISegmentedControl"; Pug-ki-gwi.segmentTitles[1] = "7 days"; ObjectID = "Pug-ki-gwi"; */
+"Pug-ki-gwi.segmentTitles[1]" = "7 días";
+
+/* Class = "UISegmentedControl"; Pug-ki-gwi.segmentTitles[2] = "30 days"; ObjectID = "Pug-ki-gwi"; */
+"Pug-ki-gwi.segmentTitles[2]" = "30 días";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "Tgm-2G-XxD"; */
+"Tgm-2G-XxD.normalTitle" = "Buscar";
+
+/* Class = "UILabel"; text = "Days period"; ObjectID = "ZA6-eu-NZw"; */
+"ZA6-eu-NZw.text" = "Periodo de dias";

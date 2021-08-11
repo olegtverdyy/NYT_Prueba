@@ -14,11 +14,15 @@ enum RequestMethod: String {
 enum NYTError: Error {
     case responseError
     case parseError
+    case urlError
 }
 
 struct NYTApi {
-    static func getArticles(type: ArticleType, days: DaysPeriod, socials: [String], completion: @escaping (Result<[Article], NYTError>) -> ()) {
-        guard let url = URL(string: Constants.WS.getArticles(type: type, days: days, socials: socials)) else { return }
+    static func getArticles(type: ArticleType, days: DaysPeriod, socials: [SocialNetworks], completion: @escaping (Result<[Article], NYTError>) -> ()) {
+        guard let url = URL(string: Constants.WS.getArticles(type: type, days: days, socials: socials)) else {
+            completion(.failure(.urlError))
+            return
+        }
         
         var request = URLRequest(url: url)
         request.httpMethod = RequestMethod.get.rawValue
@@ -30,14 +34,13 @@ struct NYTApi {
                 return
             }
             
-            do {
-                guard let nytResponse = try? JSONDecoder().decode(NYTResponse.self, from: data),
-                      let articles = nytResponse.results else {
-                    completion(.failure(.parseError))
-                    return
-                }
-                completion(.success(articles))
+            guard let nytResponse = try? JSONDecoder().decode(NYTResponse.self, from: data),
+                  let articles = nytResponse.results else {
+                completion(.failure(.parseError))
+                return
             }
+            
+            completion(.success(articles))
         }.resume()
     }
 }

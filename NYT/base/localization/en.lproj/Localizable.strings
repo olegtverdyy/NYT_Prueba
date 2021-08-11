@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  NYT
+
+  Created by Oleg Tverdyy on 11/8/21.
+  
+*/
+"title_info" = "Info";
+"description_empty" = "Empty response received, try again.";
+"accept_button" = "Accept";
+"title_article_search" = "Article search";
+"title_results" = "Results";
+"title_error" = "Error";
+"description_error_loading" = "An error ocurred while loading.";
